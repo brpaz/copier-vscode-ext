@@ -52,7 +52,7 @@ jobs:
             "README.md"
             "package.json"
             "tsconfig.json"
-            "src/index.ts"
+            "src/extension.ts"
           )
 
           MISSING=()

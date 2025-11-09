@@ -1,0 +1,76 @@
+{
+  "name": "{{ extension_id }}",
+  "version": "0.1.0",
+  "description": "{{ extension_description }}",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0",
+    "vscode": "^1.89.0"
+  },
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "{{ extension_id }}.helloWorld",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "scripts": {
+    "prepare": "husky",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format:check": "prettier --check src/**/*.{ts,tsx}",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write src/**/*.{ts,tsx}",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "test": "vitest run",
+    "test:watch": "vitest run --watch",
+    "test:ui": "vitest ui",
+    "vscode:prepublish": "pnpm run build",
+    "package": "vsce package --no-dependencies",
+    "publish": "vsce publish --no-dependencies"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Bruno Paz",
+    "email": "oss@brunopaz.dev",
+    "url": "https://brunopaz.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "{{ git_url }}.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/config-conventional": "^20.0.0",
+    "@eslint/js": "^9.39.1",
+    "@tsconfig/node24": "^24.0.1",
+    "@types/node": "^24.10.0",
+    "@types/vscode": "^1.105.0",
+    "@vitest/coverage-v8": "^4.0.8",
+    "@vitest/ui": "^4.0.8",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.7.0",
+    "acorn": "^8.15.0",
+    "commitlint": "^20.1.0",
+    "esbuild": "^0.25.12",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "prettier": "^3.2.5",
+    "tsdown": "^0.16.1",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^8.46.3",
+    "vitepress": "2.0.0-alpha.12",
+    "vitest": "^4.0.8",
+
+  }
+}

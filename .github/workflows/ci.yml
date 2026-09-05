@@ -41,7 +41,7 @@ jobs:
             -d extension_id="test-project" \
             -d github_repository="acme/test-project" \
             . "$tmpdir"
-          echo "output_dir=$tmpdir/test-project" >> $GITHUB_OUTPUT
+          echo "output_dir=$tmpdir" >> $GITHUB_OUTPUT
 
       - name: Check generated files
         run: |
